@@ -1,16 +1,49 @@
 body
 {
     font: Arial, sans-serif;
+    background-color: red;
 }
 
 .buttonArea,
 .footerText,
-#geoLocationContainer,
+#aboutContainer,
 #helloWorldInput,
 #helloWorldText
 {
     text-align: center;
 }
+
+#welcomeScreen
+{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #b2b2b2;
+    border: 1px solid #AAA;
+    border-radius: 5px;
+    
+}
+
+.buttons
+{
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+#myInfoButton,
+#searchForDonorButton,
+#searchForRequestButton,
+#registerButton,
+#facebookRegisterButton,
+#googleRegisterButton
+{
+    width: 70%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    text-align: center;
+}
+
 
 #txtName
 {

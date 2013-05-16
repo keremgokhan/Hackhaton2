@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title></title>
+        
+    </head>
+    <body>
+         <div data-role="view" id="register-listview" data-layout="mobile-view" data-show="detailShow" data-init="registerInit">
+            <header data-role="header">
+                <div data-role="navbar">
+                    <a class="nav-button" data-align="left" data-role="backbutton" id="cancel">Cancel</a>
+                    <span data-role="view-title">Details</span>
+                    <a class="nav-button" data-align="right" data-role="button" id="done">Done</a>
+                </div>
+            </header>
+
+            
+                <ul data-role="listview" data-style="inset" data-type="group" onclick="">
+                    <li>
+                        Kullanıcı Bilgileri
+                        <ul>
+                        <li>
+                            <label>Ad
+                                <input type="text" value=""/>
+                            </label>
+                        </li>
+                        <li>
+                            <label>Soyad
+                                <input type="text" value=""/>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                Doğum Tarihi
+                                <input type="month" value="2012-01" />
+                            </label>
+                        </li>
+                        <li>
+                            <label>Cinsiyet
+                                <input id="sex-switch" />
+                            </label>
+                        </li>
+                        <li>
+                            <label>Kan Grubu
+                                <select id="dropdown">
+                                    <option value="type0">0</option>
+                                    <option value="typeA">A</option>
+                                    <option value="typeB">B</option>
+                                    <option value="typeAB">AB</option>
+                                </select>
+                            </label>
+                        </li>
+                        <li>
+                            <label>Rh Faktörü
+                                <input id="rh-switch" />
+                            </label>
+                        </li>
+                        </ul>
+                     </li>
+                </ul>
+        </div>
+        
+        
+    <div data-role="layout" data-id="mobile-view">
+    <header data-role="header">
+        <div data-role="navbar" id="km-navbar">
+            <a class="nav-button" data-align="left" data-role="backbutton">Back</a>
+            <span data-role="view-title">Bilgilerim</span>
+        </div>
+    </header>
+    </div>
+        
+    <script>
+        function registerInit() {
+
+            $("#sex-switch").kendoMobileSwitch({
+                checked: true,
+                onLabel: "Kadın",
+                offLabel: "Erkek"
+            });
+            
+            $("#rh-switch").kendoMobileSwitch({
+                checked: true,
+                onLabel: "Rh+",
+                offLabel: "Rh-"
+            });
+        }
+    </script>
+    </body>
+    
+    
+    
+</html>

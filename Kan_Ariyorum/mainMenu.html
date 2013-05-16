@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        
+        <div data-role="view" id="tabstrip-home" data-title="Kan Arıyorum">
+            <div id="welcomeScreen">
+                <h1>Hoş Geldin!</h1>
+                <p>
+                    Kan Arıyorum&trade; sayesinde aşağıdaki butonları kullanarak hakkındaki bilgileri görüp güncelleyebilir,
+                    aradığın kan için bir dönor bulabilir ya da kan vermek için acil kan ihtiyacı olan birini bulabilirsin.
+                </p>
+            </div>
+            <div class="buttons">
+                <a href="myInfo.html" id="myInfoButton" data-role="button" data-click="openInfo">Bilgilerim</a>
+                <br></br>
+                    <a id="searchForDonorButton" data-role="button" data-click="openDonorSearch">Dönor Ara</a>
+                <br></br>
+                <a id="searchForRequestButton" data-role="button" data-click="openRequestSearch">Kan İhtiyaçlarını Ara</a>
+            </div>
+        </div>
+
+        <div data-role="view" id="tabstrip-uiinteraction" data-title="UI Interaction">
+            <ul data-role="listview" data-style="inset" data-type="group">
+                <li>
+                    Africa
+                    <ul>
+                        <li data-icon="toprated"><a>Nairobi</a></li>
+                    </ul>
+                </li>
+                <li>
+                    America
+                    <ul>
+                        <li data-icon="globe"><a>Boston</a></li>
+                        <li data-icon="globe"><a>Ottawa</a></li>
+                        <li data-icon="toprated"><a>San Francisco</a></li>
+                    </ul>
+                </li>
+                <li>
+                    Asia
+                    <ul>
+                        <li data-icon="globe"><a>Bombay</a></li>
+                    </ul>
+                </li>
+                <li>
+                    Australia
+                    <ul>
+                        <li data-icon="globe"><a>Melbourne</a></li>
+                        <li data-icon="toprated"><a>Sydney</a></li>
+                    </ul>
+                </li>
+                <li>
+                    Europe
+                    <ul>
+                        <li data-icon="globe"><a>Cannes</a></li>
+                        <li data-icon="globe"><a>Liverpool</a></li>
+                        <li data-icon="toprated"><a>London</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <h1>Say Hello!</h1>
+            <div id='helloWorldInput'>
+                <label for="txtName" style="display: inline-block;">Enter your name:</label>
+                <input type="text" id="txtName" value="" />
+            </div>
+            <div id='helloWorldText' style="display:block;"></div>
+            <div class="buttonArea">
+                <a id="resetButton" data-role="button" data-click="sayHelloReset" data-icon="refresh">Reset</a>
+                <a id="submitButton" data-role="button" data-click="sayHello" data-icon="compose">Submit</a>
+            </div>
+        </div>
+
+        <div data-role="view" id="tabstrip-geolocation" data-title="Geolocation">
+            <h1>Kan Arıyorum Nedir?</h1>
+            <div id="aboutContainer">
+                <div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
+                <a id="refreshMap" data-role="button" data-click="getLocation" data-icon="refresh">Refresh Location</a>
+                <div id="map_canvas"></div>
+            </div>
+        </div>
+
+        <div data-role="layout" data-id="mobile-tabstrip">
+            <header data-role="header">
+                <div data-role="navbar" id="km-navbar">
+                    <span data-role="view-title"></span>
+                </div>
+            </header>
+
+            <div data-role="footer">
+                <div data-role="tabstrip">
+                    <a href="#tabstrip-home" data-icon="home">Home</a>
+                    <a href="#tabstrip-uiinteraction" data-icon="share">UI Interaction</a>
+                    <a href="#tabstrip-geolocation" data-icon="globe">Geolocation</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
