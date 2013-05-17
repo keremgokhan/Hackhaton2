@@ -20,19 +20,67 @@ $.fn.serializeObject = function () {
 function registerDonorSubmit (){
     var url = urls[0];
     jQuery.support.cors = true;
-    alert(JSON.stringify($('#registerDonor').serializeObject()));
     $.ajax({
         type: "POST",
         url: url,
         contentType: "application/json",
         data: JSON.stringify($('#registerDonor').serializeObject()),
-        success: function (data) {
-           
-            alert(data);
+        success: function (incoming) {
+            if(incoming.id!=null)
+            {
+                window.localStorage.setItem("DonorId",incoming.id);
+                app.navigate(
+                    'myinfo.html#secondview',
+                    'slide:right'
+                );
+            }
         }
     });
 
     return false; 
     
     
+}
+
+function getDonorSettings(id)
+{
+    var url = urls[0] + "/" + id;
+     $.ajax({
+        type: "GET",
+        url: url,
+        contentType: "application/json",
+        success: function (data) {
+            var nameSurname = data.Name + " " + data.Surname;
+            var sex,rh;
+            
+            switch(data.Sex)
+            {
+                case true:
+                    sex="Kadın";
+                    break;
+                case false:
+                    sex="Erkek";
+                    break;
+            }
+            switch(data.RHFactor)
+            {
+                case true:
+                    rh="RH+";
+                    break;
+                case false:
+                    rh="RH-";
+                    break;
+            }
+            
+            var birthYear = data.BirthYear;
+            
+            var bloodType = data.BloodType + " " + rh; 
+            
+            
+            $('#lblNameSurname').text(nameSurname);
+            $('#lblDogumYili').text(birthYear);
+            $('#lblCinsiyet').text(sex);
+            $('#lblKan').text(bloodType);
+        }
+    });
 }
