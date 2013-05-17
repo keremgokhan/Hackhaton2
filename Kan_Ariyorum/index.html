@@ -13,8 +13,8 @@
         <link href="styles/main.css" rel="stylesheet" />
     </head>
     <body>
-        <div data-role="view" id="tabstrip-home" data-title="Kan Arıyorum">
-            <div id="welcomeScreen">
+        <div data-role="view" id="home" data-title="Kan Arıyorum">
+            <div id="firstScreen">
                 <h1>Hoş Geldin!</h1>
                 <p>
                     "Kan Arıyorum&trade; muhteşem bir uygulama" -Kerem Gökhan
@@ -29,18 +29,18 @@
                 <br>
                 <a id="facebookRegisterButton" data-role="button" data-click="openFacebookRegister">Facebook ile Giriş</a>
                 <br>
-                <a id="googleRegisterButton" data-role="button" data-click="openGoogleRegister">Google Hesabıyla Giriş</a>
+                <a href="mainMenu.html" id="googleRegisterButton" data-role="button" data-click="openGoogleRegister">Google Hesabıyla Giriş</a>
             </div>
         </div>
 
         <div data-role="layout" data-id="mobile-tabstrip">
-            <header data-role="header">
+            <footer data-role="footer">
                 <div data-role="navbar">
                     <span data-role="view-title"></span>
                 </div>
-            </header>
+            </footer>
 
-            <div data-role="footer">
+            <div data-role="header">
             </div>
         </div>
 
