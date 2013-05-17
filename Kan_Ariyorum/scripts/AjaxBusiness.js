@@ -94,6 +94,7 @@ function getDonorSettings(id)
 }
 
 function searchForDonors(){
-    openFacebookRegister();
+    var rad = $('#rad').val();
+    openFacebookRegister(rad);
     
 }
