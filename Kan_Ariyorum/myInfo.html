@@ -20,13 +20,13 @@
                 </li>
                 <li>
                     Ayarlar
-                    <ul>
-                        <li data-icon="compose"><a>Düzenle</a></li>
+                    <ul id="buttons">
+                        <li data-icon="compose" id="btnDuzenle" data-click="btnDuzenleClicked"><a data-click="btnDuzenleClicked"  data-role="detailbutton">Düzenle</a></li>
                         <li data-icon="delete"><a>Kullanıcıyı Uygulamadan Kaldır</a></li>
                     </ul>
                 </li>
             </ul>
-        </div>
+        </div>    
         
         
     <div data-role="layout" data-id="mobile-view">
@@ -40,19 +40,48 @@
         
     <script>
         function viewStart(){
-            
+            $('#buttons').kendoTouch({
+            filter: ">li",
+            tap: btnDuzenleClicked
+
+        });
             var dId = window.localStorage.getItem("DonorId");
             if(dId!=null)
                 getDonorSettings(dId);
             
             mobileSwitchInit();
         }
+        function btnDuzenleClicked()
+        {
+            global.isEditing = true;
+            app.navigate(
+                    'register.html#register-listview',
+                    'slide:right'
+                );
+        }
+        
         function mobileSwitchInit() {
 
             $("#avaibility-switch").kendoMobileSwitch({
                 checked: true,
                 onLabel: "Evet",
-                offLabel: "Hayır"
+                offLabel: "Hayır",
+                change:function(e){
+                    var id = window.localStorage.getItem('DonorId');
+                    if(id==null)return;
+                    var url = "http://kanariyorum.azurewebsites.net/api/DonorStatus/" + id;
+                    var options = {
+                        type: "PUT",
+                        url: url,
+                        contentType: "application/json",  
+                    };
+                    if(!e.checked)
+                    {
+                        options.type="DELETE";
+                    }
+                    $.ajax(options);
+                    
+                }
             });
         }
     </script>

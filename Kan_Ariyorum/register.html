@@ -22,28 +22,31 @@
                         <ul>
                         <li>
                             <label>Ad
-                                <input name="name" type="text" value=""/>
+                                <input name="name" id="txtName" type="text" value=""/>
                             </label>
                         </li>
                         <li>
                             <label>Soyad
-                                <input name="surname" type="text" value=""/>
+                                <input name="surname" id="txtSurname" type="text" value=""/>
                             </label>
                         </li>
                         <li>
                             <label>
                                 Doğum Tarihi
-                                <input type="month" name="birthYear" value="2012" />
+                                <input type="month" id="txtBirth" name="birthYear" value="1990" />
                             </label>
                         </li>
                         <li>
                             <label>Cinsiyet
-                                <input name="sex" id="sex-switch" />
+                                <select name="sex" id="drpSex">
+                                    <option value="off">Erkek</option>
+                                    <option value="on">Kadın</option>
+                                </select>
                             </label>
                         </li>
                         <li>
                             <label>Kan Grubu
-                                <select name="bloodType" id="dropdown">
+                                <select name="bloodType" id="drpBlood">
                                     <option value="0">0</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -53,7 +56,10 @@
                         </li>
                         <li>
                             <label>Rh Faktörü
-                                <input name="rhFactor" id="rh-switch" />
+                                   <select name="rhFactor" id="drpRH">
+                                    <option value="on">RH+</option>
+                                    <option value="off">RH-</option>
+                                </select>
                             </label>
                         </li>
                         </ul>
@@ -74,18 +80,54 @@
         
     <script>
         function registerInit() {
-
-            $("#sex-switch").kendoMobileSwitch({
-                checked: true,
-                onLabel: "Kadın",
-                offLabel: "Erkek"
-            });
-            
-            $("#rh-switch").kendoMobileSwitch({
-                checked: true,
-                onLabel: "Rh+",
-                offLabel: "Rh-"
-            });
+            /*if(global.isEditing==nothing)return;
+            if(global.isEditing)
+            {
+                var id = window.localStorage.getItem('DonorId');
+                if(id==null)return;
+                var url = urls[0] + "/" + id;
+                 $.ajax({
+                    type: "GET",
+                    url: url,
+                    contentType: "application/json",
+                    success: function (data) {
+                        var nameSurname = data.Name + " " + data.Surname;
+                        var sex,rh;
+                        
+                        switch(data.Sex)
+                        {
+                            case true:
+                                sex="Kadın";
+                                break;
+                            case false:
+                                sex="Erkek";
+                                break;
+                        }
+                        switch(data.RHFactor)
+                        {
+                            case true:
+                                rh="RH+";
+                                break;
+                            case false:
+                                rh="RH-";
+                                break;
+                        }
+                        
+                        var birthYear = data.BirthYear;
+                        
+                        var bloodType = data.BloodType + " " + rh; 
+                        
+                        
+                        //$('#txtName').val(data.Name);
+                        //$('#txtSurname').val( data.Surname);
+                        //$('#txtBirth').val(birthYear);
+                        //$('#drpSex').val(sex);
+                        //$('#drpBlood').val(data.BloodType);
+                        //$('#drpRH').val(rh);
+                    }
+                });
+                
+            }*/
         }
     </script>
     </body>

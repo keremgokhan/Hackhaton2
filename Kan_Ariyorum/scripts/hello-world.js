@@ -2,7 +2,7 @@
 
 // Wait for PhoneGap to load
 document.addEventListener("deviceready", onDeviceReady, false);
-
+var global = {};
 // PhoneGap is ready
 function onDeviceReady() {
     getLocation();
