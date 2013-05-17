@@ -77,6 +77,8 @@
     <Content Include="scripts\AjaxBusiness.js" />
     <Content Include="scripts\hello-world.js" />
     <Content Include="searchDonor.html" />
+    <Content Include="styles\images\gasolina.gif" />
+    <Content Include="styles\images\kan-bagisi.jpg" />
     <Content Include="styles\images\logo.png" />
     <Content Include="styles\images\logoAndName.png" />
     <Content Include="styles\main.css" />

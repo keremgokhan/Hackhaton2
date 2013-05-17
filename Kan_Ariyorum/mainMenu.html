@@ -15,72 +15,118 @@
                 </p>
             </div>
             <div class="buttons">
-                <a href="myInfo.html" id="myInfoButton" data-role="button" data-click="openInfo">Bilgilerim</a>
+                <a class="button" href="myInfo.html" id="myInfoButton" data-role="button" data-click="openInfo">Bilgilerim</a>
                 <br>
-                    <a href="searchDonor.html" id="searchForDonorButton" data-role="button" data-click="openDonorSearch">Dönor Ara</a>
+                <a class="button" href="searchDonor.html" id="searchForDonorButton" data-role="button" data-click="openDonorSearch">Dönor Ara</a>
                 <br>
-                <a id="searchForRequestButton" data-role="button" data-click="openRequestSearch">Kan İhtiyaçlarını Ara</a>
+                <a class="button" id="searchForRequestButton" data-role="button" data-click="openRequestSearch">Kan İhtiyaçlarını Ara</a>
             </div>
         </div>
 
-        <div data-role="view" id="tabstrip-uiinteraction" data-title="UI Interaction">
-            <ul data-role="listview" data-style="inset" data-type="group">
+        <div data-role="view" id="tabstrip-uiinteraction" data-title="Gelen Kutusu">
+            <ul data-role="listview" data-style="inset" data-type="group" >
                 <li>
-                    Africa
+                    Okunmamış İstekler
                     <ul>
-                        <li data-icon="toprated"><a>Nairobi</a></li>
+                        <li data-icon="mostviewed"><a>Mehmet Yilmaz</a></li>
+                    </ul>
+                    <ul>
+                        <li data-icon="mostviewed"><a>Yılmaz Güney</a></li>
+                    </ul>
+                    <ul>
+                        <li data-icon="mostviewed"><a>Güney Kuzey</a></li>
                     </ul>
                 </li>
                 <li>
-                    America
+                    Okunmuş İstekler
                     <ul>
-                        <li data-icon="globe"><a>Boston</a></li>
-                        <li data-icon="globe"><a>Ottawa</a></li>
-                        <li data-icon="toprated"><a>San Francisco</a></li>
+                        <li data-icon="organize"><a>Ali Cin</a></li>
                     </ul>
-                </li>
-                <li>
-                    Asia
                     <ul>
-                        <li data-icon="globe"><a>Bombay</a></li>
+                        <li data-icon="organize"><a>Ece Yüce</a></li>
                     </ul>
-                </li>
-                <li>
-                    Australia
                     <ul>
-                        <li data-icon="globe"><a>Melbourne</a></li>
-                        <li data-icon="toprated"><a>Sydney</a></li>
+                        <li data-icon="organize"><a>Edi Büdü</a></li>
                     </ul>
-                </li>
-                <li>
-                    Europe
                     <ul>
-                        <li data-icon="globe"><a>Cannes</a></li>
-                        <li data-icon="globe"><a>Liverpool</a></li>
-                        <li data-icon="toprated"><a>London</a></li>
+                        <li data-icon="organize"><a>Lorem Ipsum</a></li>
+                    </ul>
+                    <ul>
+                        <li data-icon="organize"><a>Alphonse Elric</a></li>
+                    </ul>
+                    <ul>
+                        <li data-icon="organize"><a>Melis Ağlayan</a></li>
                     </ul>
                 </li>
             </ul>
-            <h1>Say Hello!</h1>
-            <div id='helloWorldInput'>
-                <label for="txtName" style="display: inline-block;">Enter your name:</label>
-                <input type="text" id="txtName" value="" />
-            </div>
-            <div id='helloWorldText' style="display:block;"></div>
-            <div class="buttonArea">
-                <a id="resetButton" data-role="button" data-click="sayHelloReset" data-icon="refresh">Reset</a>
-                <a id="submitButton" data-role="button" data-click="sayHello" data-icon="compose">Submit</a>
-            </div>
         </div>
 
-        <div data-role="view" id="tabstrip-geolocation" data-title="Geolocation">
-            <h1>Kan Arıyorum Nedir?</h1>
-            <div id="aboutContainer">
-                <div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
-                <a id="refreshMap" data-role="button" data-click="getLocation" data-icon="refresh">Refresh Location</a>
-                <div id="map_canvas"></div>
+        <div data-role="view" id="tabstrip-geolocation" data-title="Kan Arıyorum Nedir?" data-badge="10">
+            <div id="aboutTextContainer">
+                <div id="firstScreen">
+                    <img class="app-logo" src="styles/images/logoAndName.png" />
+                </div>
+                <h1>Kan Arıyorum&trade;</h1>
+                <p>
+                    Acil kan ihtiyaç durumunda en yakınınızda bulunan ve uygun kan grubuna sahip insanlara ulaşmanızı 
+                    sağlayacak olan bu uygulama ile birçok insanın hayatını kurtarmak, onlara umut ışığı olmak sizin ellerinizde.
+                </p>
             </div>
-            
+            <div id="aboutTextContainer">
+                <div id="firstScreen">
+                    <img class="app-logo" src="styles/images/gasolina.gif" />
+                </div>
+                <h1>Kan Acil değil Sürekli bir ihtiyaçtır.</h1>
+                <p>
+                    Her yıl binlerce insan, bir kaza ya da hastalık sonucunda kan bulamadığı için hayatını kaybediyor. 
+                    Buna karşılık yapılan araştırmalar, yaklaşık 72 milyon insanın yaşadığı Türkiye’de yıllık kan bağış 
+                    oranının, nüfusun %1′i kadar olduğunu gösteriyor. Oysaki kan bağışı, kan bekleyen binlerce insanın 
+                    hayatını kurtarmanın yanı sıra, bağış yapan kişinin sağlığını da olumlu yönde etkiliyor.<br><br> 
+                    Kan Bağışı yaşam için yapılan bir armağandır. Ülkemizde her yıl 2 milyona yakın kan ihtiyacı vardır. 
+                    Bu ihtiyaç çoğunlukla hastaların yakınlarından ve acil durumda sağlanabilmektedir.
+                    <br><br>
+                    18 ve 65 yaş arası olan sağlıklı bulaşıcı hastalığı veya riski olmayan 50 kg üzerinde kişiler 
+                    kan bağışlayabilirler.<br><br>
+                    Yılda üç kez kan bağışı yapılabilir. Sağlıklı kişilerin yılda en az 2 kez bağışı yapmasıyla 
+                    ülke ihtiyacı karşılanabilmektedir. Ancak düzenli olarak kan bağışlayan kişi sayısı malesef çok azdır.
+                </p>
+            </div>
+            <div id="aboutTextContainer">
+                <div id="firstScreen">
+                    <img class="app-logo" src="styles/images/kan-bagisi.jpg" />
+                </div>
+                <h1>Kimler Kan Veremezler?</h1>
+                <p>
+                    <ol>
+                        <li>Hepatit B (Hiçbir zaman kan veremezler) </li>
+                        <li>Hepatit C (Hiçbir zaman kan veremezler) </li>
+                        <li>AIDS (Hiçbir zaman kan veremezler)  </li>
+                        <li>Sıtma (Tedavinin sağlanmasından 3 yıl sonradan itibaren kan verebilirler) </li>
+                        <li>Frengi geçiren hastalar, iyileşmeden 1 yıl sonra kan verebilirler. </li>
+                        <li>Creutzfeldt-Jacob hastalığı olanlar, hiçbir zaman kan veremez.  </li>
+                        <li>Chagas Hastalığı ( Alınan kan sadece fraksinasyon amaçlı kullanılabilir)  </li>
+                        <li>Tüberküloz (Tedavinin sağlanmasından 5 yıl sonra kan verebilirler)  </li>
+                        <li>Diabet (İlaç kullanmayan veya ilaç kullandığı halde, kan şekeri regüle edilmiş olanlar kan verebilir) </li>
+                        <li>Anemi (Anemi teşhisi konmuş kişiler kan bağışçısı olamazlar)  </li>
+                        <li>Hamileler kan veremez. Doğum veya gebeliğin sonlan(dırıl)masından 6 hafta sonra kan verebilirler. </li>
+                        <li>Koroner kalp hastalığı, angina pektoris, ciddi kardiyak aritmi, serebrovasküler hastalıklar, arteriyal tromboz veya rekküren venöz trombozu olan kişiler kan veremezler.  </li>
+                        <li>Allerji ( Astım hastaları kan veremez. Polen allerjisi olanlar ise, sadece allerjileri oldukları dönemde kan veremezler.)  </li>
+                        <li>Otoimmün hastalığı olanlar kan veremezler.  </li>
+                        <li>Kanama diatezi (Kanama eğilimi) olanlar ömür boyu kan veremezler.  </li>
+                        <li>Bronşit (Kronik bronşit hastaları kan veremez) </li>
+                        <li>Kronik nefrit ve pyelonefritli hastalar kan veremez. Akut glomerulonefrit geçirmiş olanlar ise, iyileşmeden 5 yıl sonra bağış yapabilir.</li>
+                        <li>Malign (Habis) hastalığı olanlar, gönüllü donör olarak kabul edilmezler. </li>
+                        <li>Brusella almış olanlar, tam iyileşmeyi takiben iki sene sonra kan bağışı gönüllüsü olabilirler.  </li>
+                        <li>Epilepsi hastaları, kan veremezler. </li>
+                        <li>Osteomyelit geçirmiş hastalar, tam düzelmeden 5 yıl sonra kan verebilirler. </li>
+                        <li>Büyük ameliyatlardan sonra 6 ay boyunca kan bağışı alınmaz. Mide rezeksiyonu geçirenler ise, hiçbir zaman donör olamazlar.  </li>
+                        <li>Transfüzyon: Kan veya kan ürünü alan donörler, 1 yıl boyunca kan veremezler. </li>
+                        <li>Attenüe virus aşısı yapılmış olanlar 3 hafta kan veremez.( Su çiçeği, sarı humma, kızamık, kızamıkçık, oral polio, kabakulak)  </li>
+                        <li>Ölü bakteri aşısı olanlar, 5 gün donör olamazlar.( Kolera, tifo, antrax) </li>
+                        <li>İnaktif virus aşısı ve toxoid alanlar ise 3 gün kan veremezler ( Polio-injeksiyon , influenza, rabies, difteri, tetanoz)  </li>
+                    </ol>
+                </p>
+            </div>
         </div>
 
         <div data-role="layout" data-id="mobile-tabstrip">
@@ -92,9 +138,9 @@
 
             <div data-role="header">
                 <div data-role="tabstrip">
-                    <a href="#tabstrip-home" data-icon="home">Home</a>
-                    <a href="#tabstrip-uiinteraction" data-icon="share">UI Interaction</a>
-                    <a href="#tabstrip-geolocation" data-icon="globe">Geolocation</a>
+                    <a href="#tabstrip-home" data-icon="home">Ana Sayfa</a>
+                    <a href="#tabstrip-uiinteraction" data-icon="reply">Gelen Kutusu</a>
+                    <a href="#tabstrip-geolocation" data-icon="info">Hakkında</a>
                 </div>
             </div>
         </div>
