@@ -3,7 +3,8 @@
 // Wait for PhoneGap to load
 document.addEventListener("deviceready", onDeviceReady, false);
 var global = {};
-
+var pages=['#tabstrip-home','#tabstrip-uiinteraction','#tabstrip-geolocation'];
+var swipeIndex=0;
 // PhoneGap is ready
 function onDeviceReady() {
     getLocation();
@@ -14,6 +15,13 @@ function onDeviceReady() {
         $('#buttons').attr('style','display:none');
         app.navigate( "mainMenu.html#welcomeScreen","slide:right");
     }
+    
+    $('#tabstrip-home').kendoTouch({
+            filter:">div",
+            enableSwipe: true,
+            swipe: swipe
+        });
+    
 }
 
 function getLocation() {
@@ -71,4 +79,16 @@ function openFacebookRegister()
 {
     app.navigate('MapMode.html#map','slide:right');
     
+}
+function swipe(e){
+    if(e.direction=="left" && swipeIndex<2)
+    {
+        var page =pages[++swipeIndex];
+        app.navigate(page,'slide:left');
+    }
+    else if(e.direction=="right" && swipeIndex>0)
+    {
+                var page =pages[--swipeIndex];
+        app.navigate(page,'slide:right');
+    }
 }
