@@ -43,7 +43,7 @@
         var map;
         
         //new kendo.mobile.Application(document.body, {layout: "default"});
-		 var db = [{'Ad':'Mehmet','Latitude':39,'Longitude':'45'},{'Ad':'Ahmet','Latitude':12,'Longitude':'23'}];
+		 //var db = [{'Ad':'Mehmet','Latitude':39,'Longitude':'45'},{'Ad':'Ahmet','Latitude':12,'Longitude':'23'}];
          var markers=[];
             function loadContent(){
                  alert("istek gonderildi!");
@@ -67,16 +67,28 @@
                 strokeColor: "#FF0000",
                 strokeOpacity: 0.8,
                 strokeWeight: 2,
-                fillColor: "#00CC00",
-                fillOpacity: 0.20,
+                fillColor: "#00BC00",
+                fillOpacity: 0.10,
                 map: map
             });
+        }
+        var infowindow = new google.maps.InfoWindow({
+            content: ""
+        });
+        function add_marker(racer_id, point, note) {
+            var marker = new google.maps.Marker({map: map, position: point, clickable: true});
+            marker.note = note;
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.content = this.note;
+                infowindow.open(this.getMap(), this);
+            });
+            return marker;
         }
         
 		function onGeolocationSuccess(position){
            var db = [];   
            
-           db.push({'Ad':'Mehmet Sencer KARADAYI','Latitude':position.coords.latitude,'Longitude':position.coords.longitude});
+           db.push({'Ad':'Mehmet Sencer KARADAYI','Latitude':position.coords.latitude + 0.4,'Longitude':position.coords.longitude});
            db.push({'Ad':'Merve Parın','Latitude':position.coords.latitude+1.4,'Longitude':position.coords.longitude+2.1});
            db.push({'Ad':'Kerem Gökhan','Latitude':position.coords.latitude-1.1,'Longitude':position.coords.longitude-2.2});
            db.push({'Ad':'Engin Deniz Cengiz','Latitude':position.coords.latitude+3,'Longitude':position.coords.longitude-2.1});
@@ -84,7 +96,7 @@
            var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var myOptions = {
                 center: latlng,
-                zoom: 20,
+                zoom: 12,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             var mapElement = $("#map_canvas");
@@ -94,35 +106,37 @@
         
            center = latlng;         
            
-           html = '<div id="info_content">' + 'Ben Kendimim' + '<button id="btn" class="km-button">Bas bana</button> </div>';
-           
-
-           
+           var html;
+        
            DrawCircle(5000);
            DrawCircle(1000);
             
-            
+
             for(i=0;i<db.length;i++)
             {
-        
+
                 latlng = new google.maps.LatLng(db[i].Latitude, db[i].Longitude);
-                html = '<div id="info_content">' + db[i].Ad + '<button id="btn" class="km-button">Bas bana</button> </div>';
+                html = '<div id="info_content" style="color:black">' + db[i].Ad + '<br>' + '<button id="btn" class="km-button">Talep Gönder</button> </div>';
                 
-                var marker = new google.maps.Marker({
+
+                add_marker(i,latlng,html);
+                
+                /*var marker = new google.maps.Marker({
                     map:map,
-                    position:latlng
-                });
-                var infowindow = new google.maps.InfoWindow({
-                    content: ""
+                    position:latlng,
+                    note: html
                 });
                 google.maps.event.addListener(marker, "click", function() {
-                        
-    
-                    infowindow.setContent(html);
+                    
+
+                    infowindow.setContent(marker.note);
                     infowindow.open(map, this);
-                   
-                });
+               
+                });*/
+
             }
+
+
 
         }
     </script>
