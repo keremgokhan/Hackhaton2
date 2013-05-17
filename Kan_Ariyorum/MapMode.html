@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+        <title>GoogleMap and KendoUI</title>
+
+		<!-- add the google maps scripts -->
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCG4jUolof0jhqQu0j1aNqSWfW_ms-wRKg&sensor=true"></script>
+		
+		<!-- The following style is used to disable the scroller and set the correct height for the map element -->
+        <style>
+            #map .km-content,
+            #map .km-scroll-container,
+            #map #map_canvas {
+                display: -webkit-box;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+		
+		<!-- hook up to the init event of the view and initialize the google map -->
+        <div data-role="view" data-init="buildMap" id="map" data-title="Mevcut Bağışçılar">
+            <div id="map_canvas" style="width:100%;"></div> 
+             <style>
+            #map .km-content,
+            #map .km-scroll-container,
+            #map #map_canvas {
+                display: -webkit-box;
+                width: 100%;
+            }
+        </style>
+        </div>
+
+
+    <script>
+                    
+        var radius = 1000;
+    
+        var center = "";
+         
+        var map;
+        
+        //new kendo.mobile.Application(document.body, {layout: "default"});
+		 var db = [{'Ad':'Mehmet','Latitude':39,'Longitude':'45'},{'Ad':'Ahmet','Latitude':12,'Longitude':'23'}];
+         var markers=[];
+            function loadContent(){
+                 alert("istek gonderildi!");
+            }
+		//initialize the google map
+        function buildMap(e) {
+            navigator.geolocation.getCurrentPosition(onGeolocationSuccess, function(){alert('asd')});
+            
+              
+
+            var container = e.view.content;
+
+           
+        }
+
+        function DrawCircle(rad)
+        {
+            var circle = new google.maps.Circle({
+                center: center,
+                radius: rad,
+                strokeColor: "#FF0000",
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: "#00CC00",
+                fillOpacity: 0.20,
+                map: map
+            });
+        }
+        
+		function onGeolocationSuccess(position){
+            
+           var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            var myOptions = {
+                center: latlng,
+                zoom: 20,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var mapElement = $("#map_canvas");
+           map = new google.maps.Map(mapElement[0], myOptions);
+            
+ 
+        
+           center = latlng;         
+           
+           html = '<div id="info_content">' + 'Ben Kendimim' + '<button id="btn" class="km-button">Bas bana</button> </div>';
+           
+
+           
+           DrawCircle(5000);
+           DrawCircle(1000);
+            
+            
+            for(i=0;i<db.length;i++)
+            {
+        
+                latlng = new google.maps.LatLng(db[i].Latitude, db[i].Longitude);
+                html = '<div id="info_content">' + db[i].Ad + '<button id="btn" class="km-button">Bas bana</button> </div>';
+                
+                var marker = new google.maps.Marker({
+                    map:map,
+                    position:latlng
+                });
+                var infowindow = new google.maps.InfoWindow({
+                    content: ""
+                });
+                google.maps.event.addListener(marker, "click", function() {
+                        
+    
+                    infowindow.setContent(html);
+                    infowindow.open(map, this);
+                   
+                });
+            }
+
+        }
+    </script>
+        
+      
+        
+    </body>
+</html>
