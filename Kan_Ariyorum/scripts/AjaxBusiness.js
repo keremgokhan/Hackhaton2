@@ -30,6 +30,7 @@ function registerDonorSubmit (){
             }
             if (incoming.id != null) {
 				window.localStorage.setItem("DonorId", incoming.id);
+                window.localStorage.setItem('Badges',1);
 				app.navigate(
 					'mainMenu.html',
 					'slide:right'

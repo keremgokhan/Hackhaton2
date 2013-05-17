@@ -6,6 +6,7 @@ var global = {};
 
 // PhoneGap is ready
 function onDeviceReady() {
+     
     getLocation();
     navigator.splashscreen.hide();
     app.showLoading();
@@ -14,6 +15,8 @@ function onDeviceReady() {
         $('#buttons').attr('style','display:none');
         app.navigate( "mainMenu.html#welcomeScreen","slide:right");
     }
+    
+
 }
 
 function getLocation() {
