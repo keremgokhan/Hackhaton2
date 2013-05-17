@@ -19,25 +19,33 @@ $.fn.serializeObject = function () {
 
 function registerDonorSubmit (){
     var url = urls[0];
+    var id=window.localStorage.getItem('DonorId');
     jQuery.support.cors = true;
-    $.ajax({
-        type: "POST",
-        url: url,
-        contentType: "application/json",
-        data: JSON.stringify($('#registerDonor').serializeObject()),
-        success: function (incoming) {
-            if(incoming.id!=null)
-            {
-                window.localStorage.setItem("DonorId",incoming.id);
-                app.navigate(
-                    'myinfo.html#secondview',
-                    'slide:right'
-                );
+	var options = {type: "POST",
+		url: url,
+		contentType: "application/json",
+		data: JSON.stringify($('#registerDonor').serializeObject()),success: function (incoming) {
+			if(incoming==null){
+                app.navigate("#:back");
             }
-        }
-    });
-
-    return false; 
+            if (incoming.id != null) {
+				window.localStorage.setItem("DonorId", incoming.id);
+				app.navigate(
+					'myinfo.html#secondview',
+					'slide:right'
+					);
+			}
+		}};
+    
+    if(global.isEditing)
+    {
+        options.type="PUT";
+        options.url = options.url + "/" + id;
+        
+    }
+    $.ajax(options);
+    global.isEditing=false;
+	return false; 
     
     
 }
