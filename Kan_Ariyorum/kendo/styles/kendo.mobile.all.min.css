@@ -16,7 +16,9 @@
     background-color: rgb(229, 229, 229);
 }
 .km-android .km-view .km-content .km-list > li {
-    background-color: rgb(178, 178, 178);
+    background-color: #7f7f7f;
+    border: 1px solid #AAA;
+    border-radius: 5px;
 }
 .km-android .km-view .km-navbar {
     background-color: rgb(175, 17, 28);
