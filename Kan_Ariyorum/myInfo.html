@@ -20,7 +20,7 @@
                 </li>
                 <li>
                     Ayarlar
-                    <ul id="buttons">
+                    <ul id="buttonsLi">
                         <li data-icon="compose" id="btnDuzenle" data-click="btnDuzenleClicked"><a data-click="btnDuzenleClicked"  data-role="detailbutton">Düzenle</a></li>
                         <li data-icon="delete"><a>Kullanıcıyı Uygulamadan Kaldır</a></li>
                     </ul>
@@ -40,7 +40,8 @@
         
     <script>
         function viewStart(){
-            $('#buttons').kendoTouch({
+
+            $('#buttonsLi').kendoTouch({
             filter: ">li",
             tap: btnDuzenleClicked
 
@@ -53,8 +54,14 @@
         }
         function btnDuzenleClicked(e)
         {
+            //alert($(e.touch.currentTarget).data('icon'W));
             if($(e.touch.currentTarget).data('icon')=="delete")
+            {
                 window.localStorage.clear();
+                alert('Kullanıcı silindi');
+                navigator.app.exitApp();
+                return;
+            }
             else
             {
             global.isEditing = true;

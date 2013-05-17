@@ -6,13 +6,13 @@
     </head>
     <body>
         <div data-role="view" id="donor-listview" data-layout="mobile-view" data-show="detailShow" data-init="searchDonorInit">
-            <header data-role="header">
+            <footer data-role="footer">
                 <div data-role="navbar">
-                    <a class="nav-button" data-align="left" data-role="backbutton" id="cancel">İptal</a>
-                    <span data-role="view-title">Uygun Donör Arama</span>
-                    <a class="nav-button" data-align="right" data-role="button" data-click="registerDonorSubmit" id="registerDonorSubmit">Tamam</a>
+                    <a class="nav-button" data-align="left" data-role="backbutton" id="cancel">Cancel</a>
+                    <span data-role="view-title">Uygun Dönor Arama</span>
+                    <a class="nav-button" data-align="right" data-role="button" data-click="searchForDonors" id="searchForDonors">Ara</a>
                 </div>
-            </header>
+            </footer>
 
             <form id="searchDonor" method="POST">
                 <ul data-role="listview" data-style="inset" data-type="group" onclick="">
@@ -47,14 +47,7 @@
         </div>
         
         
-    <div data-role="layout" data-id="mobile-view">
-        <header data-role="header">
-            <div data-role="navbar" id="km-navbar">
-                <a class="nav-button" data-align="left" data-role="backbutton">Back</a>
-                <span data-role="view-title">Uygun Donör Arama</span>
-            </div>
-        </header>
-    </div>
+
         
     <script>
         function searchDonorInit() {

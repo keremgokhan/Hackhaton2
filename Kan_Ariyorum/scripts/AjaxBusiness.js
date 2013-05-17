@@ -31,7 +31,7 @@ function registerDonorSubmit (){
             if (incoming.id != null) {
 				window.localStorage.setItem("DonorId", incoming.id);
 				app.navigate(
-					'myinfo.html#secondview',
+					'mainMenu.html',
 					'slide:right'
 					);
 			}
@@ -91,4 +91,9 @@ function getDonorSettings(id)
             $('#lblKan').text(bloodType);
         }
     });
+}
+
+function searchForDonors(){
+    openFacebookRegister();
+    
 }
