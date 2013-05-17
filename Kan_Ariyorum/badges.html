@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title></title>
+        
+    </head>
+    <body>
+        <div data-role="view" id="badge-view" data-title="Rozetlerim">
+            <ul data-role="listview" data-style="inset" data-type="group" >
+                <li>
+                    Seviye 1
+                    <ul id="liste">
+                        <li data-icon="add" style="background-color:rgb(175, 17, 28)" id="ilk">İlk Adım</li>
+                    </ul>
+                    <ul>
+                        <li data-icon="add">İlk Kan</li>
+                    </ul>
+                    <ul>
+                        <li data-icon="add">Sosyal ol!</li>
+                    </ul>
+                </li>
+                <li>
+                    Seviye 2
+                    <ul>
+                        <li data-icon="favorites">Kanka</li>
+                    </ul>
+                    <ul>
+                        <li data-icon="favorites">İkinci Bağış</li>
+                    </ul>
+                </li>
+                <li>
+                    Seviye 3
+                    <ul>
+                        <li data-icon="featured">Eski Toprak(1 Yıllık Üye)</li>
+                    </ul>
+                    <ul>
+                        <li data-icon="featured">Üçüncü Bağış</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+            <div data-role="layout" data-id="mobile-view">
+                <footer data-role="footer">
+                    <div data-role="navbar" id="km-navbar">
+                        <a class="nav-button" data-align="left" data-role="backbutton">Geri</a>
+                        <span data-role="view-title">Rozetlerim</span>
+                    </div>
+                </footer>
+            </div>
+        <script>
+            $(document).ready(function(){
+                  
+            });
+         
+        </script>
+    </body>
+</html>
