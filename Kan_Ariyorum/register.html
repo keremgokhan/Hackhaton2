@@ -11,54 +11,55 @@
                 <div data-role="navbar">
                     <a class="nav-button" data-align="left" data-role="backbutton" id="cancel">Cancel</a>
                     <span data-role="view-title">Details</span>
-                    <a class="nav-button" data-align="right" data-role="button" id="done">Done</a>
+                    <a class="nav-button" data-align="right" data-role="button" data-click="registerDonorSubmit" id="registerDonorSubmit">Done</a>
                 </div>
             </header>
 
-            
+            <form id="registerDonor" method="POST">
                 <ul data-role="listview" data-style="inset" data-type="group" onclick="">
                     <li>
                         Kullanıcı Bilgileri
                         <ul>
                         <li>
                             <label>Ad
-                                <input type="text" value=""/>
+                                <input name="name" type="text" value=""/>
                             </label>
                         </li>
                         <li>
                             <label>Soyad
-                                <input type="text" value=""/>
+                                <input name="surname" type="text" value=""/>
                             </label>
                         </li>
                         <li>
                             <label>
                                 Doğum Tarihi
-                                <input type="month" value="2012-01" />
+                                <input type="month" name="birthYear" value="2012" />
                             </label>
                         </li>
                         <li>
                             <label>Cinsiyet
-                                <input id="sex-switch" />
+                                <input name="sex" id="sex-switch" />
                             </label>
                         </li>
                         <li>
                             <label>Kan Grubu
-                                <select id="dropdown">
-                                    <option value="type0">0</option>
-                                    <option value="typeA">A</option>
-                                    <option value="typeB">B</option>
-                                    <option value="typeAB">AB</option>
+                                <select name="bloodType" id="dropdown">
+                                    <option value="0">0</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="AB">AB</option>
                                 </select>
                             </label>
                         </li>
                         <li>
                             <label>Rh Faktörü
-                                <input id="rh-switch" />
+                                <input name="rhFactor" id="rh-switch" />
                             </label>
                         </li>
                         </ul>
                      </li>
                 </ul>
+            </form>
         </div>
         
         
