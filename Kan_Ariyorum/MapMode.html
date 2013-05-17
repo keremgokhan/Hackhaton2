@@ -98,7 +98,7 @@
            var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var myOptions = {
                 center: latlng,
-                zoom: 12,
+                zoom: 15,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             var mapElement = $("#map_canvas");
@@ -109,9 +109,8 @@
            center = latlng;         
            
            var html;
-        
-           DrawCircle(5000);
-           DrawCircle(1000);
+          if(global.radius!=null)
+               DrawCircle(parseFloat(global.radius));
             
 
             for(i=0;i<db.length;i++)

@@ -75,8 +75,9 @@ function onGeolocationError(error) {
     $("#myLocation").html("<span class='err'>" + error.message + "</span>");
 }
 
-function openFacebookRegister()
+function openFacebookRegister(rad)
 {
+    global.radius = rad;
     app.navigate('MapMode.html#map','slide:right');
     
 }
