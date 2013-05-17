@@ -25,9 +25,10 @@ function registerDonorSubmit (){
         url: url,
         contentType: "application/json",
         data: JSON.stringify($('#registerDonor').serializeObject()),
-        success: function (data) {
-            alert('asda' + data);
-            if(data.id!=null)
+        success: function (incoming) {
+            var jsD = JSON.parse(incoming);
+            alert(jsD);
+            if(jsD.id!=null)
             {
                 alert('asd');
                 window.localStorage.setItem("DonorId",data.id);
