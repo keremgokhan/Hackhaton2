@@ -22,18 +22,18 @@
                         <ul>
                         <li>
                             <label>Ad
-                                <input name="name" id="txtName" type="text" value=""/>
+                                <input name="name" id="mehmet"  type="text" />
                             </label>
                         </li>
                         <li>
                             <label>Soyad
-                                <input name="surname" id="txtSurname" type="text" value=""/>
+                                <input name="surname" id="txtSurname" type="text" />
                             </label>
                         </li>
                         <li>
                             <label>
                                 Doğum Tarihi
-                                <input type="month" id="txtBirth" name="birthYear" value="1990" />
+                                <input type="month" id="txtBirth" name="birthYear"  />
                             </label>
                         </li>
                         <li>
@@ -80,9 +80,10 @@
         
     <script>
         function registerInit() {
-            /*if(global.isEditing==nothing)return;
+            if(global.isEditing==null)return;
             if(global.isEditing)
             {
+              
                 var id = window.localStorage.getItem('DonorId');
                 if(id==null)return;
                 var url = urls[0] + "/" + id;
@@ -117,17 +118,16 @@
                         
                         var bloodType = data.BloodType + " " + rh; 
                         
-                        
-                        //$('#txtName').val(data.Name);
-                        //$('#txtSurname').val( data.Surname);
-                        //$('#txtBirth').val(birthYear);
-                        //$('#drpSex').val(sex);
-                        //$('#drpBlood').val(data.BloodType);
-                        //$('#drpRH').val(rh);
+                        $('#mehmet').val(data.Name);
+                        $('#txtSurname').val( data.Surname);
+                        $('#txtBirth').val(birthYear);
+                        $('#drpSex').val(sex);
+                        $('#drpBlood').val(data.BloodType);
+                        $('#drpRH').val(rh);
                     }
                 });
                 
-            }*/
+            }
         }
     </script>
     </body>

@@ -51,14 +51,19 @@
             
             mobileSwitchInit();
         }
-        function btnDuzenleClicked()
+        function btnDuzenleClicked(e)
         {
+            if($(e.touch.currentTarget).data('icon')=="delete")
+                window.localStorage.clear();
+            else
+            {
             global.isEditing = true;
             app.navigate(
                     'register.html#register-listview',
                     'slide:right'
                 );
-        }
+            }
+       }
         
         function mobileSwitchInit() {
 
