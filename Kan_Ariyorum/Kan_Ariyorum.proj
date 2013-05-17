@@ -37,6 +37,7 @@
     <Folder Include="App_Resources\Android\drawable-nodpi">
       <Platform>Android</Platform>
     </Folder>
+    <Folder Include="styles\images" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="App_Resources\iOS\icon.png" />
@@ -75,6 +76,8 @@
     <Content Include="register.html" />
     <Content Include="scripts\AjaxBusiness.js" />
     <Content Include="scripts\hello-world.js" />
+    <Content Include="styles\images\logo.png" />
+    <Content Include="styles\images\logoAndName.png" />
     <Content Include="styles\main.css" />
     <Content Include="cordova.ios.js">
       <Platform>iOS</Platform>
