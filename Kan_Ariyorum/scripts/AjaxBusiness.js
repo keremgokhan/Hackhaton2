@@ -20,19 +20,36 @@ $.fn.serializeObject = function () {
 function registerDonorSubmit (){
     var url = urls[0];
     jQuery.support.cors = true;
-    alert(JSON.stringify($('#registerDonor').serializeObject()));
     $.ajax({
         type: "POST",
         url: url,
         contentType: "application/json",
         data: JSON.stringify($('#registerDonor').serializeObject()),
         success: function (data) {
-           
-            alert(data);
+            alert('asda' + data);
+            if(data.id!=null)
+            {
+                alert('asd');
+                window.localStorage.setItem("DonorId",data.id);
+            }
         }
     });
 
     return false; 
     
     
+}
+
+function getDonorSettings(id)
+{
+    var url = urls[0];
+     $.ajax({
+        type: "GET",
+        url: url,
+        contentType: "application/json",
+        data: id,
+        success: function (data) {
+            alert(data);
+        }
+    });
 }

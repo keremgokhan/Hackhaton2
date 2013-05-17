@@ -6,15 +6,16 @@
        
     </head>
     <body>
-        <div data-role="view" id="secondview" data-init="mobileSwitchInit" data-layout="mobile-view" data-title="Bilgilerim">
+        <div data-role="view" id="secondview" data-init="viewStart" data-layout="mobile-view" data-title="Bilgilerim">
             <ul data-role="listview" data-style="inset" data-type="group">
                 <li>
                     Kullanıcı Bilgileri
                     <ul>
-                        <li data-icon="contacts">İsim Soyisim:</li>
-                        <li data-icon="contacts">Dogum Tarihi:</li>
-                        <li data-icon="contacts">Cinsiyet:</li>
-                        <li data-icon="contacts">Uygunluk:<input id="avaibility-switch" /></li>
+                        <li data-icon="contacts">İsim Soyisim : <label style="float:right"   id="lblNameSurname">asd</label></li>
+                        <li data-icon="contacts">Dogum Tarihi : <label style="float:right" id="lblDogumYili">asd</label></li>
+                        <li data-icon="contacts">Cinsiyet : <label style="float:right" id="lblCinsiyet">asd</label></li>
+                        <li data-icon="contacts">Kan Grubu : <label style="float:right" id="lblKan">asd</label></li>
+                        <li data-icon="contacts">Uygunluk : <input id="avaibility-switch" /></li>
                     </ul>
                 </li>
                 <li>
@@ -38,6 +39,14 @@
     </div>
         
     <script>
+        function viewStart(){
+            
+            var dId = window.localStorage.getItem("DonorId");
+            if(dId!=null)
+                getDonorSettings(dId);
+            
+            mobileSwitchInit();
+        }
         function mobileSwitchInit() {
 
             $("#avaibility-switch").kendoMobileSwitch({
