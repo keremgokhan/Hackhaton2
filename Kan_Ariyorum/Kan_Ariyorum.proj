@@ -72,6 +72,7 @@
     <Content Include="mainMenu.html" />
     <Content Include="myInfo.html" />
     <Content Include="register.html" />
+    <Content Include="scripts\AjaxBusiness.js" />
     <Content Include="scripts\hello-world.js" />
     <Content Include="styles\main.css" />
     <Content Include="cordova.ios.js">
