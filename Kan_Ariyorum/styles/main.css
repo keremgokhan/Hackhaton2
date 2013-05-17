@@ -13,8 +13,7 @@ body
     text-align: center;
 }
 
-#welcomeScreen,
-#firstScreen
+#welcomeScreen
 {
     margin-top: 5%;
     margin-left: 5%;
@@ -23,6 +22,12 @@ body
     border: 1px solid #AAA;
     border-radius: 5px;
     
+}
+
+#firstScreen
+{
+    margin-top: 5%;
+    text-align: center;
 }
 
 .buttons
@@ -41,10 +46,16 @@ body
     width: 70%;
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 10%;
+    margin-top: 5%;
     text-align: center;
 }
 
+.app-logo
+{
+    width: 60%;
+    float: center;
+    margin: .5em 0;
+}
 
 #txtName
 {

@@ -59,3 +59,9 @@ function onGeolocationSuccess(position) {
 function onGeolocationError(error) {
     $("#myLocation").html("<span class='err'>" + error.message + "</span>");
 }
+
+function openFacebookRegister()
+{
+    app.navigate('MapMode.html#map','slide:right');
+    
+}
