@@ -70,6 +70,7 @@
     <Content Include="kendo\styles\images\KendoUI.woff" />
     <Content Include="kendo\styles\kendo.mobile.all.min.css" />
     <Content Include="mainMenu.html" />
+    <Content Include="MapMode.html" />
     <Content Include="myInfo.html" />
     <Content Include="register.html" />
     <Content Include="scripts\AjaxBusiness.js" />
