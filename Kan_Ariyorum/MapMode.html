@@ -74,7 +74,11 @@
         }
         
 		function onGeolocationSuccess(position){
-            
+           var db = [];   
+           
+           db.push({'Ad':'Ahmet','Latitude':12,'Longitude':'23'}});
+           
+        
            var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var myOptions = {
                 center: latlng,
