@@ -9,7 +9,7 @@ var swipeIndex=0;
 function onDeviceReady() {
     getLocation();
     navigator.splashscreen.hide();
-    app.showLoading();
+
     if(window.localStorage.getItem('DonorId') != null)
     {
         $('#buttons').attr('style','display:none');
@@ -76,6 +76,14 @@ function onGeolocationError(error) {
 }
 
 function openFacebookRegister(rad)
+{
+    alert('Not implemented!');
+    /*global.radius = rad;
+    app.navigate('MapMode.html#map','slide:right');*/
+    
+}
+
+function openMap(rad)
 {
     global.radius = rad;
     app.navigate('MapMode.html#map','slide:right');

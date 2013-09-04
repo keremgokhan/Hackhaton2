@@ -6,23 +6,23 @@
        
     </head>
     <body>
-        <div data-role="view" id="secondview" data-init="viewStart" data-layout="mobile-view" data-title="Bilgilerim">
+        <div data-role="view" id="secondview" data-init="viewStart()" data-layout="mobile-view" data-title="My Info">
             <ul data-role="listview" data-style="inset" data-type="group">
                 <li>
-                    Kullanıcı Bilgileri
+                    User Info
                     <ul>
-                        <li data-icon="contacts">İsim Soyisim : <label style="float:right"   id="lblNameSurname">asd</label></li>
-                        <li data-icon="contacts">Dogum Tarihi : <label style="float:right" id="lblDogumYili">asd</label></li>
-                        <li data-icon="contacts">Cinsiyet : <label style="float:right" id="lblCinsiyet">asd</label></li>
-                        <li data-icon="contacts">Kan Grubu : <label style="float:right" id="lblKan">asd</label></li>
-                        <li data-icon="contacts">Uygunluk : <input id="avaibility-switch" /></li>
+                        <li data-icon="contacts">Name : <label style="float:right"   id="lblNameSurname"></label></li>
+                        <li data-icon="contacts">DoB : <label style="float:right" id="lblDogumYili"></label></li>
+                        <li data-icon="contacts">Gender : <label style="float:right" id="lblCinsiyet"></label></li>
+                        <li data-icon="contacts">Blood Type : <label style="float:right" id="lblKan"></label></li>
+                        <li data-icon="contacts">Availability : <input id="avaibility-switch" /></li>
                     </ul>
                 </li>
                 <li>
-                    Ayarlar
+                    Settings
                     <ul id="buttonsLi">
-                        <li data-icon="compose" id="btnDuzenle" data-click="btnDuzenleClicked"><a data-click="btnDuzenleClicked"  data-role="detailbutton">Düzenle</a></li>
-                        <li data-icon="delete"><a>Kullanıcıyı Uygulamadan Kaldır</a></li>
+                        <li data-icon="compose" id="btnDuzenle" data-click="btnDuzenleClicked"><a data-click="btnDuzenleClicked"  data-role="detailbutton">Update Info</a></li>
+                        <li data-icon="delete"><a>Unregister User</a></li>
                     </ul>
                 </li>
             </ul>
@@ -32,13 +32,20 @@
     <div data-role="layout" data-id="mobile-view">
     <footer data-role="footer">
         <div data-role="navbar" id="km-navbar">
-            <a class="nav-button" data-align="left" data-role="backbutton">Geri</a>
-            <span data-role="view-title">Bilgilerim</span>
+            <a class="nav-button" data-align="left" data-role="backbutton">Back</a>
+            <span data-role="view-title">My info</span>
         </div>
     </footer>
     </div>
         
     <script>
+        $(function() {
+             var dId = window.localStorage.getItem("DonorId");
+            if(dId!=null)
+                getDonorSettings(dId);
+            
+        });
+
         function viewStart(){
 
             $('#buttonsLi').kendoTouch({
@@ -46,10 +53,7 @@
             tap: btnDuzenleClicked
 
         });
-            var dId = window.localStorage.getItem("DonorId");
-            if(dId!=null)
-                getDonorSettings(dId);
-            
+           
             mobileSwitchInit();
         }
         function btnDuzenleClicked(e)
@@ -76,8 +80,8 @@
 
             $("#avaibility-switch").kendoMobileSwitch({
                 checked: true,
-                onLabel: "Evet",
-                offLabel: "Hayır",
+                onLabel: "Yes",
+                offLabel: "No",
                 change:function(e){
                     var id = window.localStorage.getItem('DonorId');
                     if(id==null)return;

@@ -21,7 +21,7 @@
     <body>
 		
 		<!-- hook up to the init event of the view and initialize the google map -->
-        <div data-role="view" data-init="buildMap" id="map" data-title="Mevcut Bağışçılar">
+        <div data-role="view" data-init="buildMap" id="map" data-title="Donors">
             <div id="map_canvas" style="width:100%;"></div> 
              <style>
             #map .km-content,
@@ -46,7 +46,7 @@
 		 //var db = [{'Ad':'Mehmet','Latitude':39,'Longitude':'45'},{'Ad':'Ahmet','Latitude':12,'Longitude':'23'}];
          var markers=[];
             function loadContent(){
-                 alert("istek gonderildi!");
+                 alert("Request send!");
             }
 		//initialize the google map
         function buildMap(e) {
@@ -118,7 +118,7 @@
 
                 latlng = new google.maps.LatLng(db[i].Latitude, db[i].Longitude);
 
-                html = '<div id="info_content" style="color:black">' + db[i].Ad + '<br>' + '<button id="btn" class="km-button">Talep Gönder</button> </div>';
+                html = '<div id="info_content" style="color:black">' + db[i].Ad + '<br>' + '<button id="btn" class="km-button">Send Request</button> </div>';
 
                 
 

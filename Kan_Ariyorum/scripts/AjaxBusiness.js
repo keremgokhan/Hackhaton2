@@ -18,6 +18,7 @@ $.fn.serializeObject = function () {
 
 
 function registerDonorSubmit (){
+        app.showLoading();
     var url = urls[0];
     var id=window.localStorage.getItem('DonorId');
     jQuery.support.cors = true;
@@ -28,14 +29,25 @@ function registerDonorSubmit (){
 			if(incoming==null){
                 app.navigate("#:back");
             }
-            if (incoming.id != null) {
+            else if (incoming.id != null) {
 				window.localStorage.setItem("DonorId", incoming.id);
                 window.localStorage.setItem('Badges',1);
-				app.navigate(
+				  app.hideLoading();
+                app.navigate(
 					'mainMenu.html',
 					'slide:right'
 					);
+                
 			}
+            else
+            {
+                  app.hideLoading();
+                app.navigate("#:back");
+                 var dId = window.localStorage.getItem("DonorId");
+            if(dId!=null)
+                getDonorSettings(dId);
+                
+            }
 		}};
     
     if(global.isEditing)
@@ -53,6 +65,7 @@ function registerDonorSubmit (){
 
 function getDonorSettings(id)
 {
+       app.showLoading();
     var url = urls[0] + "/" + id;
      $.ajax({
         type: "GET",
@@ -65,10 +78,10 @@ function getDonorSettings(id)
             switch(data.Sex)
             {
                 case true:
-                    sex="Kadın";
+                    sex="Female";
                     break;
                 case false:
-                    sex="Erkek";
+                    sex="Male";
                     break;
             }
             switch(data.RHFactor)
@@ -90,12 +103,14 @@ function getDonorSettings(id)
             $('#lblDogumYili').text(birthYear);
             $('#lblCinsiyet').text(sex);
             $('#lblKan').text(bloodType);
+            app.hideLoading();
         }
     });
 }
 
 function searchForDonors(){
     var rad = $('#rad').val();
-    openFacebookRegister(rad);
+    openMap(rad);
     
+        
 }

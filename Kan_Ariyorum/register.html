@@ -9,43 +9,43 @@
          <div data-role="view" id="register-listview" data-layout="mobile-view" data-show="detailShow" data-init="registerInit">
             <header data-role="header">
                 <div data-role="navbar">
-                    <a class="nav-button" data-align="left" data-role="backbutton" id="cancel">İptal</a>
-                    <span data-role="view-title">Kayıt</span>
-                    <a class="nav-button" data-align="right" data-role="button" data-click="registerDonorSubmit" id="registerDonorSubmit">Tamam</a>
+                    <a class="nav-button" data-align="left" data-role="backbutton" id="cancel">Cancel</a>
+                    <span data-role="view-title">Register</span>
+                    <a class="nav-button" data-align="right" data-role="button" data-click="registerDonorSubmit" id="registerDonorSubmit">Submit</a>
                 </div>
             </header>
 
             <form id="registerDonor" method="POST">
                 <ul data-role="listview" data-style="inset" data-type="group" onclick="">
                     <li>
-                        Kullanıcı Bilgileri
+                        User Info
                         <ul>
                         <li>
-                            <label>Ad
+                            <label>Name
                                 <input name="name" id="mehmet"  type="text" />
                             </label>
                         </li>
                         <li>
-                            <label>Soyad
+                            <label>Surname
                                 <input name="surname" id="txtSurname" type="text" />
                             </label>
                         </li>
                         <li>
                             <label>
-                                Doğum Tarihi
+                                DoB
                                 <input type="month" id="txtBirth" name="birthYear"  />
                             </label>
                         </li>
                         <li>
-                            <label>Cinsiyet
+                            <label>Gender
                                 <select name="sex" id="drpSex">
-                                    <option value="off">Erkek</option>
-                                    <option value="on">Kadın</option>
+                                    <option value="off">Male</option>
+                                    <option value="on">Female</option>
                                 </select>
                             </label>
                         </li>
                         <li>
-                            <label>Kan Grubu
+                            <label>Blood Type
                                 <select name="bloodType" id="drpBlood">
                                     <option value="0">0</option>
                                     <option value="A">A</option>
@@ -55,7 +55,7 @@
                             </label>
                         </li>
                         <li>
-                            <label>Rh Faktörü
+                            <label>Rh Factor
                                    <select name="rhFactor" id="drpRH">
                                     <option value="on">RH+</option>
                                     <option value="off">RH-</option>
@@ -73,7 +73,7 @@
     <header data-role="header">
         <div data-role="navbar" id="km-navbar">
             <a class="nav-button" data-align="left" data-role="backbutton">Back</a>
-            <span data-role="view-title">Bilgilerim</span>
+            <span data-role="view-title">My Info</span>
         </div>
     </header>
     </div>
@@ -98,10 +98,10 @@
                         switch(data.Sex)
                         {
                             case true:
-                                sex="Kadın";
+                                sex="Female";
                                 break;
                             case false:
-                                sex="Erkek";
+                                sex="Male";
                                 break;
                         }
                         switch(data.RHFactor)

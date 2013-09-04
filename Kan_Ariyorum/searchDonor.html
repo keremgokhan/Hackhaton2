@@ -8,19 +8,19 @@
         <div data-role="view" id="donor-listview" data-layout="mobile-view" data-show="detailShow" data-init="searchDonorInit">
             <footer data-role="footer">
                 <div data-role="navbar">
-                    <a class="nav-button" data-align="left" data-role="backbutton" id="cancel">İptal</a>
-                    <span data-role="view-title">Uygun Donör Arama</span>
-                    <a class="nav-button" data-align="right" data-role="button" data-click="searchForDonors" id="searchForDonors">Ara</a>
+                    <a class="nav-button" data-align="left" data-role="backbutton" id="cancel">Cancel</a>
+                    <span data-role="view-title">Donor Search</span>
+                    <a class="nav-button" data-align="right" data-role="button" data-click="searchForDonors" id="searchForDonors">Search!</a>
                 </div>
             </footer>
 
             <form id="searchDonor" method="POST">
                 <ul data-role="listview" data-style="inset" data-type="group" onclick="">
                     <li>
-                        Aradığınız kan grubunu girin:
+                        Blood type that you are seeking:
                         <ul>
                         <li>
-                            <label>Kan Grubu
+                            <label>Blood Group
                                 <select name="bloodType" id="dropdown">
                                     <option value="0">0</option>
                                     <option value="A">A</option>
@@ -30,13 +30,13 @@
                             </label>
                         </li>
                         <li>
-                            <label>Rh Faktörü
+                            <label>Rh Factor:
                                 <input name="rhFactor" id="rh-switch" />
                             </label>
                         </li>
                         <li>
                             <label>
-                                Çap (metre)
+                                Radius (meters)
                                 <input type="number" id="rad" value="500" />
                             </label>
                         </li>

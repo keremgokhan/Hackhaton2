@@ -6,23 +6,23 @@
     </head>
     <body>
         
-        <div data-role="view" id="tabstrip-home" data-enable-swipe="true" data-swipe="onSwipe" data-title="Kan Arıyorum">
+        <div data-role="view" id="tabstrip-home" data-enable-swipe="true" data-swipe="onSwipe" data-title="Blood-Seeker">
             <div id="welcomeScreen">
-                <h1 id="hhh">Hoş Geldin!</h1>
+                <h1 id="hhh">Welcome!</h1>
                 <p id="ppp">
-                    Kan Arıyorum&trade; sayesinde acil kan arayan insanlar için bir donör olabilir, yaptığın iyilikler sonucu kazandığın rozetleri görebilirsin.
+                    Blood-Seeker&trade; enables you to be the best blood donor in the world! Donate blood and help others!
                 <br><br>
                     PineApple - 2013
                 </p>
             </div>
             <div class="buttons">
-                <a class="button" href="myInfo.html" id="myInfoButton" data-role="button" data-click="openInfo">Bilgilerim</a>
+                <a class="button" href="myInfo.html" id="myInfoButton" data-role="button" data-click="openInfo">User Info</a>
                 <br>
-                <a class="button" href="searchDonor.html" id="searchForDonorButton" data-role="button" data-click="openDonorSearch">Donör Ara</a>
+                <a class="button" href="searchDonor.html" id="searchForDonorButton" data-role="button" data-click="openDonorSearch">Search</a>
                 <br>
-                <a class="button" href="badges.html" id="searchForRequestButton" data-role="button" data-click="openRequestSearch">Rozetlerim</a>
+                <a class="button" href="badges.html" id="searchForRequestButton" data-role="button" data-click="openRequestSearch">Your Bagdes</a>
                 <br>
-                <a class="button" id="bloodBankButton" data-role="button" data-click="">Kan Bankalarında Ara</a>
+                <a class="button" id="bloodBankButton" data-role="button" data-click="">Premium Search</a>
             </div>
             <div
                 id="touchSurface"
@@ -35,10 +35,10 @@
             
         </div>
 
-        <div data-role="view" id="tabstrip-uiinteraction"  data-title="Gelen Kutusu">
+        <div data-role="view" id="tabstrip-uiinteraction"  data-title="Requests">
             <ul data-role="listview" data-style="inset" data-type="group" >
                 <li>
-                    Okunmamış İstekler
+                    Unread Requests
                     <ul>
                         <li data-icon="mostviewed"><a>Mehmet Yilmaz</a></li>
                     </ul>
@@ -50,7 +50,7 @@
                     </ul>
                 </li>
                 <li>
-                    Okunmuş İstekler
+                    Read Requests
                     <ul>
                         <li data-icon="organize"><a>Ali Cin</a></li>
                     </ul>
@@ -81,80 +81,29 @@
 </div>
         </div>
 
-        <div data-role="view" id="tabstrip-geolocation" data-title="Kan Arıyorum Nedir?" data-badge="10">
+        <div data-role="view" id="tabstrip-geolocation" data-title="What is Blood-Seeker?" data-badge="10">
             <div id="aboutTextContainer">
                 <div id="firstScreen">
-                    <img class="app-logo" src="styles/images/logoAndName.png" />
+                    <img class="app-logo" src="styles/images/logo.png" />
                 </div>
-                <h1>Kan Arıyorum&trade;</h1>
+                <h1>Blood Seeker&trade;</h1>
                 <p>
-                    Acil kan ihtiyaç durumunda en yakınınızda bulunan ve uygun kan grubuna sahip insanlara ulaşmanızı 
-                    sağlayacak olan bu uygulama ile birçok insanın hayatını kurtarmak, onlara umut ışığı olmak sizin ellerinizde.
+                    You need an urgent blood donation! Here we are! You can use Blood-Seeker&trade; to find suitable blood donors located so close to your current location!
                 </p>
             </div>
             <div id="aboutTextContainer">
                 <div id="firstScreen">
-                    <img class="app-logo" src="styles/images/gasolina.gif" />
+                    <img class="app-logo" src="styles/images/logo.png" />
                 </div>
-                <h1>Kan Acil değil Sürekli bir ihtiyaçtır.</h1>
+                <h1>Donating blood is as good for YOUR health as it is for the receiver!</h1>
                 <p>
-                    Her yıl binlerce insan, bir kaza ya da hastalık sonucunda kan bulamadığı için hayatını kaybediyor. 
-                    Buna karşılık yapılan araştırmalar, yaklaşık 72 milyon insanın yaşadığı Türkiye’de yıllık kan bağış 
-                    oranının, nüfusun %1′i kadar olduğunu gösteriyor. Oysaki kan bağışı, kan bekleyen binlerce insanın 
-                    hayatını kurtarmanın yanı sıra, bağış yapan kişinin sağlığını da olumlu yönde etkiliyor.<br><br> 
-                    Kan Bağışı yaşam için yapılan bir armağandır. Ülkemizde her yıl 2 milyona yakın kan ihtiyacı vardır. 
-                    Bu ihtiyaç çoğunlukla hastaların yakınlarından ve acil durumda sağlanabilmektedir.
-                    <br><br>
-                    18 ve 65 yaş arası olan sağlıklı bulaşıcı hastalığı veya riski olmayan 50 kg üzerinde kişiler 
-                    kan bağışlayabilirler.<br><br>
-                    Yılda üç kez kan bağışı yapılabilir. Sağlıklı kişilerin yılda en az 2 kez bağışı yapmasıyla 
-                    ülke ihtiyacı karşılanabilmektedir. Ancak düzenli olarak kan bağışlayan kişi sayısı malesef çok azdır.
+                    Research discovered donating blood can help reduce the risk of heart attacks and cancer
+                    It has this affect by reducing iron levels which can thicken blood and increase free-radical damage
+                    Beneficial for weight watchers too as people burn 650 calories with every pint donated
+
                 </p>
             </div>
-            <div id="aboutTextContainer">
-                <div id="firstScreen">
-                    <img class="app-logo" src="styles/images/kan-bagisi.jpg" />
-                </div>
-                <h1>Kimler Kan Veremezler?</h1>
-                <p>
-                    <ol>
-                        <li>Hepatit B (Hiçbir zaman kan veremezler) </li>
-                        <li>Hepatit C (Hiçbir zaman kan veremezler) </li>
-                        <li>AIDS (Hiçbir zaman kan veremezler)  </li>
-                        <li>Sıtma (Tedavinin sağlanmasından 3 yıl sonradan itibaren kan verebilirler) </li>
-                        <li>Frengi geçiren hastalar, iyileşmeden 1 yıl sonra kan verebilirler. </li>
-                        <li>Creutzfeldt-Jacob hastalığı olanlar, hiçbir zaman kan veremez.  </li>
-                        <li>Chagas Hastalığı ( Alınan kan sadece fraksinasyon amaçlı kullanılabilir)  </li>
-                        <li>Tüberküloz (Tedavinin sağlanmasından 5 yıl sonra kan verebilirler)  </li>
-                        <li>Diabet (İlaç kullanmayan veya ilaç kullandığı halde, kan şekeri regüle edilmiş olanlar kan verebilir) </li>
-                        <li>Anemi (Anemi teşhisi konmuş kişiler kan bağışçısı olamazlar)  </li>
-                        <li>Hamileler kan veremez. Doğum veya gebeliğin sonlan(dırıl)masından 6 hafta sonra kan verebilirler. </li>
-                        <li>Koroner kalp hastalığı, angina pektoris, ciddi kardiyak aritmi, serebrovasküler hastalıklar, arteriyal tromboz veya rekküren venöz trombozu olan kişiler kan veremezler.  </li>
-                        <li>Allerji ( Astım hastaları kan veremez. Polen allerjisi olanlar ise, sadece allerjileri oldukları dönemde kan veremezler.)  </li>
-                        <li>Otoimmün hastalığı olanlar kan veremezler.  </li>
-                        <li>Kanama diatezi (Kanama eğilimi) olanlar ömür boyu kan veremezler.  </li>
-                        <li>Bronşit (Kronik bronşit hastaları kan veremez) </li>
-                        <li>Kronik nefrit ve pyelonefritli hastalar kan veremez. Akut glomerulonefrit geçirmiş olanlar ise, iyileşmeden 5 yıl sonra bağış yapabilir.</li>
-                        <li>Malign (Habis) hastalığı olanlar, gönüllü donör olarak kabul edilmezler. </li>
-                        <li>Brusella almış olanlar, tam iyileşmeyi takiben iki sene sonra kan bağışı gönüllüsü olabilirler.  </li>
-                        <li>Epilepsi hastaları, kan veremezler. </li>
-                        <li>Osteomyelit geçirmiş hastalar, tam düzelmeden 5 yıl sonra kan verebilirler. </li>
-                        <li>Büyük ameliyatlardan sonra 6 ay boyunca kan bağışı alınmaz. Mide rezeksiyonu geçirenler ise, hiçbir zaman donör olamazlar.  </li>
-                        <li>Transfüzyon: Kan veya kan ürünü alan donörler, 1 yıl boyunca kan veremezler. </li>
-                        <li>Attenüe virus aşısı yapılmış olanlar 3 hafta kan veremez.( Su çiçeği, sarı humma, kızamık, kızamıkçık, oral polio, kabakulak)  </li>
-                        <li>Ölü bakteri aşısı olanlar, 5 gün donör olamazlar.( Kolera, tifo, antrax) </li>
-                        <li>İnaktif virus aşısı ve toxoid alanlar ise 3 gün kan veremezler ( Polio-injeksiyon , influenza, rabies, difteri, tetanoz)  </li>
-                    </ol>
-                </p>
-            </div>
-                        <div
-        id="touchSurface"
-        data-role="touch"
-        data-enable-swipe="1"
-        data-swipe="swipe"
-        style="width:100%;height:200px;"
-        >
-</div>
+            
         </div>
 
         <div data-role="layout" data-id="mobile-tabstrip">
